@@ -93,9 +93,28 @@ This directory contains a comprehensive collection of voice-based agent examples
 - Instead of interrupting immediately, the agent waits for the speech-to-text transcript only if the agent is currently speaking and a pending interruption is detected.
 - Both ignore words and interrupt words are defined as configurable lists, making the logic easy to adjust.
 
+### Proof of Intelligent Interruption Handling
+
+The following video demonstrates:
+
+1. The agent ignoring "yeah" while it is speaking.
+2. The agent responding to "yeah" when it is silent.
+3. The agent immediately stopping when the user says "stop".
+
+Video Proof:
+https://drive.google.com/file/d/1n3izpa9-fN4JUWQ2Dqb5uBCzyaNsc6Yq/view?usp=drive_link
+
+Notes:
+- The OpenAI LLM returns 429 quota errors in console due to zero credits.
+- This does NOT affect interruption logic validation, which is handled
+  before LLM inference.
+
 ### Running the Example
 ```bash
 python examples/voice_agents/resume_interrupted_agent.py
+
+
+
 
 
 
