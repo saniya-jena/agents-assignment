@@ -71,6 +71,12 @@ This directory contains a comprehensive collection of voice-based agent examples
 - [`error_callback.py`](./error_callback.py) - Error handling callback
 - [`session_close_callback.py`](./session_close_callback.py) - Session lifecycle management
 
+## 📖 Additional Resources
+
+- [LiveKit Agents Documentation](https://docs.livekit.io/agents/)
+- [Agents Starter Example](https://github.com/livekit-examples/agent-starter-python)
+- [More Agents Examples](https://github.com/livekit-examples/python-agents-examples)
+
 ## Intelligent Interruption Handling
 
 - This example builds on `resume_interrupted_agent.py` to improve how the agent handles interruptions during speech.
@@ -91,8 +97,6 @@ This directory contains a comprehensive collection of voice-based agent examples
 ```bash
 python examples/voice_agents/resume_interrupted_agent.py
 
-## 📖 Additional Resources
 
-- [LiveKit Agents Documentation](https://docs.livekit.io/agents/)
-- [Agents Starter Example](https://github.com/livekit-examples/agent-starter-python)
-- [More Agents Examples](https://github.com/livekit-examples/python-agents-examples)
+
+
