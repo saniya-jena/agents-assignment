@@ -90,7 +90,7 @@ This directory contains a comprehensive collection of voice-based agent examples
 ### Implementation Details
 - The agent keeps track of whether it is currently speaking by listening to TTS start and finish events.  
 - Voice Activity Detection (VAD) is left untouched and used only to detect incoming speech.  
-- Instead of interrupting immediately, the agent waits for the speech-to-text result and then decides whether the input should be ignored or treated as a real interruption.  
+- Instead of interrupting immediately, the agent waits for the speech-to-text transcript only if the agent is currently speaking and a pending interruption is detected.
 - Both ignore words and interrupt words are defined as configurable lists, making the logic easy to adjust.
 
 ### Running the Example
