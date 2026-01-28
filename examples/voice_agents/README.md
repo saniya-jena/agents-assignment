@@ -71,6 +71,26 @@ This directory contains a comprehensive collection of voice-based agent examples
 - [`error_callback.py`](./error_callback.py) - Error handling callback
 - [`session_close_callback.py`](./session_close_callback.py) - Session lifecycle management
 
+## Intelligent Interruption Handling
+
+- This example builds on `resume_interrupted_agent.py` to improve how the agent handles interruptions during speech.
+- It prevents the agent from stopping when the user gives short backchannel responses like “yeah”, “ok”, or “hmm” while listening.
+
+### Behavior
+- When the agent is speaking, brief acknowledgement words are ignored so the audio continues naturally without any pauses or breaks.  
+- If the user says an actual command such as “stop” or “wait”, the agent interrupts immediately.  
+- When the agent is not speaking, short responses like “yeah” are treated as normal user input and handled as part of the conversation.
+
+### Implementation Details
+- The agent keeps track of whether it is currently speaking by listening to TTS start and finish events.  
+- Voice Activity Detection (VAD) is left untouched and used only to detect incoming speech.  
+- Instead of interrupting immediately, the agent waits for the speech-to-text result and then decides whether the input should be ignored or treated as a real interruption.  
+- Both ignore words and interrupt words are defined as configurable lists, making the logic easy to adjust.
+
+### Running the Example
+```bash
+python examples/voice_agents/resume_interrupted_agent.py
+
 ## 📖 Additional Resources
 
 - [LiveKit Agents Documentation](https://docs.livekit.io/agents/)
